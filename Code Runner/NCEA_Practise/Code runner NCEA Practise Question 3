@@ -1,0 +1,22 @@
+""""""
+transaction_list = []
+
+STOP = 0
+BALANCE = 200
+
+while True:
+    try:
+        money = int(input('Enter the amount spent: '))
+        if money == STOP:
+            break
+        elif money > STOP:
+            transaction_list.append(money)
+        else:
+            transaction_list.append(money)
+    except ValueError:
+        print('That is not a valid transaction.')
+
+NEW_BALANCE = BALANCE - money
+
+for money in transaction_list:
+    print(NEW_BALANCE - money)
