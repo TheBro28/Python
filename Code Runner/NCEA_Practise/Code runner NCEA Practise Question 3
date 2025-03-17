@@ -1,9 +1,14 @@
-""""""
+"""This program asks the user to input the amount spent, it will then store the transactions in a list. After the user inputs 0, the code will print out the balance after each transaction."""
+
+# Used list called "transaction_list" to store all the transactions the user inputs
 transaction_list = []
 
+# Used variables to store the starting balance and the stop value
 STOP = 0
 BALANCE = 200
 
+# Used a loop to repeat the code forever, untill the use inputs 0
+# Asks the user to input the amount spent, if the amount spent is above 0, it will add the amount to the list, if the user inputs a value that is less than 0 it will add the value to the list.
 while True:
     try:
         money = int(input('Enter the amount spent: '))
@@ -16,8 +21,7 @@ while True:
     except ValueError:
         print('That is not a valid transaction.')
 
-NEW_BALANCE = BALANCE - money
-
+# Prints out the balance after each transaction
 print(BALANCE)
 for money in transaction_list:
     BALANCE -= money
