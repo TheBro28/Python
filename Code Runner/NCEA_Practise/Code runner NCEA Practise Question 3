@@ -18,5 +18,7 @@ while True:
 
 NEW_BALANCE = BALANCE - money
 
+print(BALANCE)
 for money in transaction_list:
-    print(NEW_BALANCE - money)
+    BALANCE -= money
+    print(BALANCE)
