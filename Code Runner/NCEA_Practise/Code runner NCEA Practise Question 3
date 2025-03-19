@@ -2,12 +2,14 @@
 
 # Used list called "transaction_list" to store all the transactions the user inputs
 transaction_list = []
-# Used variables to store the starting balance and the stop value
+
+# Used variables to store the balance and the stop value
 STOP = 0
 BALANCE = 200
 
-# Used a loop to repeat the code forever, untill the use inputs 0 or 200
-# Asks the user to input the amount spent, if the amount spent is above 0, it will add the amount to the list, if the user inputs a value that is less than 0 it will add the value to the list.
+# Used a "while True" loop to repeat the code over and over untill the user inputs 0. Also used a "try" to test code for invalid inputs
+# Asks the user to input the amount spent, if the amount spent is over 0, it will add the amount to the list. If the user inputs 0 it will break the loop and print out the balance after each transaction. If the user inputs a value that is less than 0 it will add the value to the list.
+# If the total amount spent is over or equal to the balance, it will break the loop
 while True:
     try:
         money = int(input('Enter the amount spent: '))
@@ -20,7 +22,6 @@ while True:
             transaction_list.append(money)
         if sum(transaction_list) >= BALANCE:
             break
-
     except ValueError:
         print('That is not a valid transaction.')
 
