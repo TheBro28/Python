@@ -1,7 +1,7 @@
 """This code keeps asking the user to enter a sea level until the user types "terminate". The code will then find the average sea level based on those inputs"""
 
 # List
-sea_level_list = []
+sea_levels = []
 
 # Constants
 STOP_CODE = "terminate"
@@ -17,11 +17,16 @@ while True:
         if sea_level < ZERO:
             print("Please enter a positive number")
         else:
-            sea_level_list.append(sea_level)
+            sea_levels.append(sea_level)
     except ValueError:
         print("Invalid!")
 
 # Calculate average
-for sea_level in sea_level_list:
-    average = sum(sea_level_list) / len(sea_level_list)
+for sea_level in sea_levels:
+    average = sum(sea_levels) / len(sea_levels)
 print(f"The average sea level is {average}.")
+
+# 
+if sea_level in sea_levels > average:
+    above_average += 1
+print(f"List of sea levels above the average: {above_average}")
