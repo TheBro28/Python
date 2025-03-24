@@ -2,6 +2,7 @@
 
 # List
 sea_levels = []
+above_average = []
 
 # Constants
 STOP_CODE = "terminate"
@@ -26,7 +27,9 @@ for sea_level in sea_levels:
     average = sum(sea_levels) / len(sea_levels)
 print(f"The average sea level is {average}.")
 
-for sea_level in sea levels:
+# 
+
+for sea_level in sea_levels:
     if sea_level > average:
-    above_average += 1
-    print(f"List of sea levels above the average: {above_average}")
+        above_average.append(sea_level)
+print(f"List of sea levels above the average: {above_average}")
