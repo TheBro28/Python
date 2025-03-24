@@ -32,4 +32,5 @@ print(f"The average sea level is {average}.")
 for sea_level in sea_levels:
     if sea_level > average:
         above_average.append(sea_level)
-print(f"List of sea levels above the average: {above_average}")
+print("List of sea levels above average: ")
+print(above_average)
