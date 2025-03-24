@@ -26,7 +26,7 @@ for sea_level in sea_levels:
     average = sum(sea_levels) / len(sea_levels)
 print(f"The average sea level is {average}.")
 
-# 
-if sea_level in sea_levels > average:
+for sea_level in sea levels:
+    if sea_level > average:
     above_average += 1
-print(f"List of sea levels above the average: {above_average}")
+    print(f"List of sea levels above the average: {above_average}")
