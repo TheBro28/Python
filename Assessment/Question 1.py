@@ -36,12 +36,13 @@ for sea_level in sea_levels:
 print(f"The average sea level is {average}.")
 
 # For loop goes through all the sea levels in the "sea_levels" list. If the a sea level in that list is greater than the average sea level then that value will be added to the "above_average" list.
-# Prints out the "List of sea levels above average: " only if the above-average list has one or more values in it, then leaves a line and prints the list of above average sea_levels connecting them with ", ". Used the join function to join them, the map function and "str, above_average" to apply this to all items in the list.
+# Prints out the sea levels above the average sea level ONE LINE AFTER THE OTHER.
 
 for sea_level in sea_levels:
     if sea_level > average:
         above_average.append(sea_level)
 if len(above_average) >= ONE_ABOVE_AVERAGE:
     print("List of sea levels above average: ")
-    print(", ".join(map(str, above_average)))
-break
+    for i in above_average:
+        print(i)
+    
