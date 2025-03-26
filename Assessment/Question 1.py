@@ -1,15 +1,19 @@
 """This code keeps asking the user to enter a sea level until the user types "terminate". The code will then find the average sea level based on those inputs"""
 
-# List
+# LISTS
+# Lists used to keep track of all the user entered inputs that are equal to or above 0 (sea_levels), and a list to store all the values above the average value (above_average).
 sea_levels = []
 above_average = []
 
-# Constants
+# CONSTANTS
+# Constants used to remove any sort of magic number/string in the program, allowing for easy changes in future.
 STOP_CODE = "terminate"
 ZERO = 0
 
-# Loop
+# LOOP
+# Loops the code forever until the user inputs "terminate".
 while True:
+ # Used a "try:" to test the code for errors.
     try:
         sea_level = input("Enter a sea level: ")
         if sea_level == STOP_CODE:
@@ -28,9 +32,9 @@ for sea_level in sea_levels:
 print(f"The average sea level is {average}.")
 
 # 
-
 for sea_level in sea_levels:
     if sea_level > average:
         above_average.append(sea_level)
 print("List of sea levels above average: ")
-print(above_average)
+print(", ".join(map(str, above_average)))
+    
