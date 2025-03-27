@@ -5,9 +5,10 @@ sea_levels = []
 above_average = []
 
 # Constants used to remove any sort of magic number/string in the program, allowing for easy changes in future.
-STOP_CODE = "terminate"
+STOP_CODE = "Terminate"
 ZERO = 0
 ONE_ABOVE_AVERAGE = 1
+FLOAT_ZERO = 0.0
 
 # Loops the code forever until the user inputs "terminate".
 while True:
@@ -17,7 +18,7 @@ while True:
  # If that condition is not met then it changes the input to a float, causing any other strings that aren't "terminate" to be picked up Except ValueError block.
  # If the input is a negitave number it will ask the user to input a positive number.
   # If the input is then found to be a number it will add the input to the "sea_levels" list.
-        sea_level = input("Enter sea level: ")
+        sea_level = input("Enter sea level: ").title()
         if sea_level == STOP_CODE:
             break
         sea_level = float(sea_level)
@@ -29,20 +30,25 @@ while True:
     except ValueError:
         print("Invalid!")
 
-# Used a for loop to go through all the appended values in the "sea_levels" list.
+# If the list is empty then it will print out the average as 0.0.
+# If the list is not empty the code uses a for loop to go through all the appended values in the "sea_levels" list.
 # Calculates the average by adding the sum of all the numbers in the list "sum(sea_levels)", divided by how many items are in the list "len(sea_levels)". Prints out the average sea level.
-for sea_level in sea_levels:
-    average = sum(sea_levels) / len(sea_levels)
-print(f"The average sea level is {average}.")
-
+if len(sea_levels) == ZERO:
+    average = FLOAT_ZERO
+    print(f"The average sea level is {average}.")
+else:
+    for sea_level in sea_levels:
+        average = sum(sea_levels) / len(sea_levels)
+    print(f"The average sea level is {average}.")
+        
 # For loop goes through all the sea levels in the "sea_levels" list. If the a sea level in that list is greater than the average sea level then that value will be added to the "above_average" list.
 # Prints out the sea levels above the average sea level ONE LINE AFTER THE OTHER.
-
+    average = sum(sea_levels) / len(sea_levels)
 for sea_level in sea_levels:
     if sea_level > average:
         above_average.append(sea_level)
 if len(above_average) >= ONE_ABOVE_AVERAGE:
+    above_average.sort()
     print("List of sea levels above average: ")
     for i in above_average:
         print(i)
-    
